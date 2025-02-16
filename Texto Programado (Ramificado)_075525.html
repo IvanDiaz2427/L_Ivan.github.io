@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Instrucción Programada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+            text-align: left;
+            font-weight: 500;
+        }
+        .drop-zone {
+            display: inline-block;
+            min-width: 120px;
+            height: 30px;
+            background: #dfe6e9;
+            border: 2px dashed #7f8c8d;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 16px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .option {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px 15px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: grab;
+            font-size: 16px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .option:hover {
+            background: #74b9ff;
+            color: #fff;
+            transform: scale(1.1);
+        }
+        .correct {
+            background-color: #2ecc71 !important;
+            color: #fff;
+            font-weight: bold;
+        }
+        .incorrect {
+            background-color: #e74c3c !important;
+            color: #fff;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #fff;
+        }
+        .result-message {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .score {
+            font-size: 20px;
+            color: #fff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz de Instrucción Programada</h1>
+    <h4>2"B" (Aprendizaje)</h4>
+
+    <!-- Pregunta 1 -->
+    <div class="quiz-container">
+        <div class="question" data-correct="2">
+            <p>1. El psicólogo <span class="drop-zone" data-answer></span> fue el principal autor de la teoría del aprendizaje observacional.</p>
+            <div class="options-container">
+                <div class="option" draggable="true" data-option="1">B.F. Skinner</div>
+                <div class="option" draggable="true" data-option="2">Albert Bandura</div>
+                <div class="option" draggable="true" data-option="3">Jean Piaget</div>
+                <div class="option" draggable="true" data-option="4">Ivan Pavlov</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pregunta 2 -->
+    <div class="quiz-container">
+        <div class="question" data-correct="3">
+            <p>2. La <span class="drop-zone" data-answer></span> también se le conoce como la teoría del aprendizaje observacional.</p>
+            <div class="options-container">
+                <div class="option" draggable="true" data-option="1">Teoría del condicionamiento clásico</div>
+                <div class="option" draggable="true" data-option="2">Teoría de la motivación social</div>
+                <div class="option" draggable="true" data-option="3">Teoría del aprendizaje social</div>
+                <div class="option" draggable="true" data-option="4">Teoría de la conducta operante</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="quiz-container">
+        <div class="question" data-correct="4">
+            <p>3. El experimento de <span class="drop-zone" data-answer></span> lo realizó Bandura para demostrar su teoría.</p>
+            <div class="option" draggable="true" data-option="1">El perro de Pavlov</div>
+            <div class="option" draggable="true" data-option="2">La caja de Skinner</div>
+            <div class="option" draggable="true" data-option="3">La prueba de conservación de líquidos</div>
+            <div class="option" draggable="true" data-option="4">El Muñeco Bobo</div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="1">
+            <p>4. La <span class="drop-zone" data-answer></span> NO es un proceso del aprendizaje observacional.</p>
+            <div class="option" draggable="true" data-option="1">Recompensa inmediata</div>
+            <div class="option" draggable="true" data-option="2">Motivación</div>
+            <div class="option" draggable="true" data-option="3">Atención</div>
+            <div class="option" draggable="true" data-option="4">Retención</div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="2">
+            <p>5. El refuerzo <span class="drop-zone" data-answer></span> nos explica que las personas aprenden observando las consecuencias de las acciones de otros.</p>
+            <div class="option" draggable="true" data-option="1">Positivo</div>
+            <div class="option" draggable="true" data-option="2">Vicario</div>
+            <div class="option" draggable="true" data-option="3">Negativo</div>
+            <div class="option" draggable="true" data-option="4">Intrinseco</div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="4">
+            <p>6. Para que una persona pueda imitar un comportamiento observado, nececita <span class="drop-zone" data-answer></span></p>
+            <div class="option" draggable="true" data-option="1"> Que haya sido premiada por imitarlo. </div>
+            <div class="option" draggable="true" data-option="2"> Que lo haya repetido antes. </div>
+            <div class="option" draggable="true" data-option="3"> Que sea forzada a hacerlo. </div>
+            <div class="option" draggable="true" data-option="4"> Que tenga la capacidad física y cognitiva para reproducirlo. </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="3">
+            <p>7. La <span class="drop-zone" data-answer></span> influye en la atención dentro del aprendizaje observacional.</p>
+            <div class="option" draggable="true" data-option="1"> Edad del observador </div>
+            <div class="option" draggable="true" data-option="2"> Cantidad de premios dados al observador </div>
+            <div class="option" draggable="true" data-option="3"> Novedad y relevancia del modelo </div>
+            <div class="option" draggable="true" data-option="4"> Cantidad de repeticiones del comportamiento </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="4">
+            <p>8. Bandura decia que para que un comportamiento observado se mantenga a largo plazo este debía  <span class="drop-zone" data-answer></span> </p>
+            <div class="option" draggable="true" data-option="1"> Repetirlo muchas veces. </div>
+            <div class="option" draggable="true" data-option="2"> Copiarlo inmediatamente. </div>
+            <div class="option" draggable="true" data-option="3"> Castigar al observador. </div>
+            <div class="option" draggable="true" data-option="4"> retenerlo en la memoria y haya motivación para reproducirlo. </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="3">
+            <p>9. El evento de que <span class="drop-zone" data-answer></span> Es un ejemplo de refuerzo vicario.</p>
+            <div class="option" draggable="true" data-option="1"> Un niño recibe una galleta por hacer su tarea </div>
+            <div class="option" draggable="true" data-option="2"> Un estudiante estudia más después de recibir una buena nota </div>
+            <div class="option" draggable="true" data-option="3"> Un niño ve que su hermano es castigado por gritar y decide no hacerlo </div>
+            <div class="option" draggable="true" data-option="4"> Un adulto imita a su jefe porque admira su liderazgo </div>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="question" data-correct="2">
+            <p>10. Bandura en su experimento del Muñeco Bobo demostró que  <span class="drop-zone" data-answer></span> sentando las bases del aprendizaje observacional. </p>
+            <div class="option" draggable="true" data-option="1"> Los niños solo aprenden por repetición </div>
+            <div class="option" draggable="true" data-option="2"> Los niños imitan la agresión sin recibir un refuerzo directo </div>
+            <div class="option" draggable="true" data-option="3"> Los niños necesitan recompensas para aprender </div>
+            <div class="option" draggable="true" data-option="4"> El aprendizaje es siempre inconsciente </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Preguntas por Karo Almaráz.  Programado por Iván Díaz</p>
+    </div>
+
+    <div id="result-message" class="result-message"></div>
+    <div id="score" class="score"></div>
+
+    <script>
+        let correctAnswers = 0;
+        let totalQuestions = document.querySelectorAll('.question').length;
+        let answeredQuestions = 0;
+
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('dragstart', (event) => {
+                event.dataTransfer.setData('text/plain', option.dataset.option);
+                event.dataTransfer.setData('text/content', option.textContent);
+            });
+        });
+
+        document.querySelectorAll('.drop-zone').forEach(zone => {
+            zone.addEventListener('dragover', (event) => {
+                event.preventDefault();
+            });
+
+            zone.addEventListener('drop', (event) => {
+                event.preventDefault();
+                let droppedOption = event.dataTransfer.getData('text/plain');
+                let droppedText = event.dataTransfer.getData('text/content');
+                let correctOption = zone.closest('.question').dataset.correct;
+
+                // Set answer to drop-zone
+                zone.textContent = droppedText;
+                zone.classList.remove('correct', 'incorrect');
+                
+                // Reset all options to default state
+                zone.closest('.question').querySelectorAll('.option').forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                });
+
+                // Mark the correct answer
+                if (droppedOption === correctOption) {
+                    zone.classList.add('correct');
+                    correctAnswers++;
+                }
+
+                // Highlight the correct answer
+                zone.closest('.question').querySelector(`.option[data-option="${correctOption}"]`).classList.add('correct');
+
+                // Highlight incorrect answers in red
+                zone.closest('.question').querySelectorAll('.option').forEach(option => {
+                    if (option.dataset.option !== correctOption) {
+                        option.classList.add('incorrect');
+                    }
+                });
+
+                // Increase answered questions counter
+                answeredQuestions++;
+
+                // Check if all questions have been answered
+                if (answeredQuestions === totalQuestions) {
+                    displayResult();
+                }
+            });
+        });
+
+        function displayResult() {
+            let message = '';
+            if (correctAnswers === 10) {
+                message = '¡Excelente! Has respondido todas las preguntas correctamente.';
+            } else if (correctAnswers >= 7) {
+                message = '¡Muy bien! Has obtenido una gran puntuación.';
+            } else if (correctAnswers >= 5) {
+                message = '¡Buen trabajo! Sigue practicando para mejorar.';
+            } else {
+                message = '¡No te rindas! Continúa practicando y lo lograrás.';
+            }
+            document.getElementById('result-message').textContent = message;
+            document.getElementById('score').textContent = `Aciertos: ${correctAnswers} de 10`;
+        }
+    </script>
+</body>
+</html>
